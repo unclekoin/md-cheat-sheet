@@ -1,4 +1,4 @@
-[&#8678; get back to the start...](./readme.md)
+[&#8678; get back to the start...](./README.md)
 # Arrays
 
 ### Add elements
