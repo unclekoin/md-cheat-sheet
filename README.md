@@ -1,5 +1,5 @@
 # Basic JavaScript 
-<img src="./images/JavaScript.png" height="200">
+<img src="./images/javascript.png" height="200">
 
 ---
 ## Table of Content
