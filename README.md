@@ -14,4 +14,5 @@
 1. [Arrays](./content/09-arrays.md)
 1. [Objects](./content/10-objects.md)
 1. [Date & Time](./content/11-date-time.md)
+1. [Sets](./content/21-sets.md)
 ---
