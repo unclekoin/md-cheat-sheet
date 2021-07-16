@@ -13,3 +13,25 @@
 * str.replaceAll(substr, replacement) // change all
 * str.repeat(number)
 * str.trim()
+---
+* str.split(separator) // array
+* arr.join(separator) // string
+---
+
+## Capitalize
+```js 
+str[0].toUpperCase() + str.slece(1);
+str.replace(str[0], str[0].toUpperCase);
+```
+## Padding
+
+```js
+'123'.padStart(8, '0');     // "00000123"
+'123'.padEnd(8, '0');     // "12300000"
+```
+
+```js
+const cardNumber = '123456789045';
+const lastFourDigits = cardNumber.slice(-4);
+const maskedNumber = lastFourDigits.padStart(cardNumber.length, '*') // "********9045"
+```
