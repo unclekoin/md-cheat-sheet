@@ -68,3 +68,6 @@ startTime // 1626343276690
 endTime // 1626343276692
 endTime - startTime // 2
 ```
+## toDateString
+```js
+new Date(1993, 6, 28, 14, 39, 7).toDateString(); // "Wed Jul 28 1993"

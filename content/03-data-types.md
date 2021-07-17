@@ -13,7 +13,7 @@ typeof null // object
 6. object - not primitive!!!
 7. symbol
 ```js
-const id = Symbol('di');
+const id = Symbol('id');
 ```
 8. bigint
 ```js
