@@ -15,6 +15,7 @@
 1. [Objects](./content/10-objects.md)
 1. [Date & Time](./content/11-date-time.md)
 1. [This](./content/12-this.md)
+1. [Classes & OOP](./content/13-classes-oop.md)
 1. [Sets](./content/21-sets.md)
 1. [Maps](./content/22-maps.md)
 ---
