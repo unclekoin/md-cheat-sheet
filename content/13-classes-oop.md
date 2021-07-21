@@ -101,7 +101,7 @@ class Developer {
     return this.#salary;
   }
 
-  // setter
+  // setter can't accept more than one parameter
   set setSalary(value) {
     this.#salary = value;
   }

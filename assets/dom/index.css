@@ -1,0 +1,280 @@
+:root {
+    --primary-color: #546792;
+    --text-color: #ffffff;
+    --delete-button-background: #FF0000;
+    --checkbox-checked-background: #546791;
+    --checkbox-border-color: #000;
+    --checkbox-text-color: #fff;
+    --default-border-color: #000;
+    --error-color: #FF0000;
+    --modal-overlay: rgb(84, 103, 145, 0.6);
+}
+
+html {
+    font-size: 10px;
+    line-height: 10px;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+#tasks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 20px;
+}
+
+.tasks__wrapper {
+    max-width: 70%;
+    width: 100%;
+}
+
+.tasks__wrapper_hidden {
+    display: none;
+}
+
+.main-navigation {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: var(--primary-color);
+}
+
+.main-navigation__button-item {
+    position: relative;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 25px;
+    text-decoration: none;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    text-transform: uppercase;
+}
+
+.main-navigation__button-item_selected {
+    box-shadow: inset 0 0 0 4px #fff;
+}
+
+.create-task-block {
+    position: relative;
+}
+
+.create-task-block__input {
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    color: var(--primary-color);
+  
+    font-size: 2rem;
+    line-height: 2.5rem;
+    height: 40px;
+    width: 50%;
+    padding: 0 5px;
+    margin-bottom: 40px;
+}
+
+.create-task-block__button {
+    height: 44px;
+}
+
+.create-task-block__button,
+.task-item__delete-button {
+    cursor: pointer;
+
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    padding: 5px 20px;
+    border-radius: 5px;
+  
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+}
+
+.task-item {
+    width: 100%;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    border-bottom: 2px solid var(--primary-color);
+    padding: 10px 0;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.task-item__main-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.task-item__main-content {
+    display: flex;
+    align-items: center;
+}
+
+.task-item__delete-button {
+    transition: 0.2s ease;
+}
+
+.task-item__delete-button {
+    position: relative;
+}
+
+.task-item__delete-button:hover {
+    background-color: var(--delete-button-background);
+}
+
+.task-item__text {
+    font-size: 2rem;
+    line-height: 2.5rem;
+}
+
+.checkbox-form__checkbox + label {
+    display: block;
+    margin: 0.2em;
+    cursor: pointer;
+    padding: 0.2em;
+}
+  
+.checkbox-form__checkbox  {
+    display: none;
+}
+  
+.checkbox-form__checkbox + label:before {
+    content: "\2714";
+    border: 0.1em solid var(--checkbox-border-color);
+    border-radius: 0.2em;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    padding-left: 0.2em;
+    padding-bottom: 0.3em;
+    margin-right: 0.2em;
+    vertical-align: bottom;
+    color: transparent;
+    transition: .2s;
+}
+
+.checkbox-form__checkbox + label:active:before {
+    transform: scale(0);
+}
+
+.checkbox-form__checkbox:checked + label:before {
+    background-color: var(--checkbox-checked-background);
+    border-color: var(--checkbox-checked-background);
+    color: var(--checkbox-text-color);
+}
+
+.checkbox-form__checkbox:disabled + label:before {
+    transform: scale(1);
+}
+
+.checkbox-form__checkbox:checked:disabled + label:before {
+    transform: scale(1);
+    background-color: var(--checkbox-checked-background);
+    border-color: var(--checkbox-checked-background);
+}
+
+.tooltip {
+    position: absolute;
+    left: -50%;
+    bottom: calc(100% + 5px);
+    margin: auto 0;
+
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    font-size: 1.5rem;
+    line-height: 2rem;
+    width: 200px;
+    border: 2px solid var(--default-border-color);
+}
+
+.error-message-block {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    font-size: 1.5rem;
+    line-height: 2rem;
+    color: var(--error-color);
+}
+
+.modal-overlay {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--modal-overlay);
+    z-index: 1000;
+    transition: 0.2s ease;
+    opacity: 1;
+}
+
+.modal-overlay_hidden {
+    top: 100%;
+    opacity: 0;
+}
+
+.delete-modal {
+    position: relative;
+    top: 0;
+    width: 50%;
+    height: fit-content;
+    padding: 15px 25px;
+
+    border: 2px solid var(--text-color);
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    transition: 0.3s ease-in;
+}
+
+.delete-modal__question {
+    font-size: 2rem;
+    line-height: 2.5rem;
+    color: var(--text-color);
+    margin: 0;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.delete-modal__buttons {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.delete-modal__button {
+    cursor: pointer;
+
+    font-size: 2rem;
+    line-height: 2.5rem;
+
+    border: 1px solid var(--text-color);
+    border-radius: 5px;
+
+    background: none;
+    color: var(--text-color);
+    padding: 5px 10px;
+
+    transition: 0.3s ease;
+}
+
+.delete-modal__button:hover {
+    box-shadow: 0 0 0 1px var(--text-color);
+}
+
+.delete-modal__confirm-button {
+    background-color: var(--delete-button-background);
+    border: 1px solid var(--delete-button-background);
+}

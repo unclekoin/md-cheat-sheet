@@ -1,5 +1,5 @@
 # Basic JavaScript 
-<img src="./images/javascript.png" height="200">
+<img src="./assets/images/javascript.png" height="200">
 
 ---
 ## Table of Content
@@ -16,6 +16,8 @@
 1. [Date & Time](./content/11-date-time.md)
 1. [This](./content/12-this.md)
 1. [Classes & OOP](./content/13-classes-oop.md)
+1. [DOM](./content/14-dom.md)
 1. [Sets](./content/21-sets.md)
 1. [Maps](./content/22-maps.md)
+1. [CSS Selecors](./content/selectors.md)
 ---
