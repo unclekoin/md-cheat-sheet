@@ -19,5 +19,6 @@
 1. [DOM](./content/14-dom.md)
 1. [Sets](./content/21-sets.md)
 1. [Maps](./content/22-maps.md)
+1. [Destructuring](./content/23-destructuring.md)
 1. [CSS Selecors](./content/selectors.md)
 ---
