@@ -88,7 +88,7 @@ result
   .then((data) => console.log(data))
   .catch((error) => console.log('error:', error));
 ```
-### Example
+#### Example
 ```html
 <body>
 
@@ -154,7 +154,7 @@ Promise.all([
 // fulfillment => all resolved
 // rejection => if any one reject 
 ```
-### Example
+#### Example
 ```html
 <body>
 
@@ -215,6 +215,14 @@ getToDoById(ids);
 
 ### Promise.race
 returns one of first fulfills or rejects promises
+```js
+Promise.race([
+  new Promise(),
+  new Promise(),
+  new Promise()
+]);
+```
+#### Example
 ```js
 const p1 = new Promise((resolve) => {
   setTimeout(() => {
