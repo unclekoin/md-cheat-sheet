@@ -17,8 +17,9 @@
 1. [This](./content/12-this.md)
 1. [Classes & OOP](./content/13-classes-oop.md)
 1. [DOM](./content/14-dom.md)
-1. [Sets](./content/21-sets.md)
-1. [Maps](./content/22-maps.md)
-1. [Destructuring](./content/23-destructuring.md)
+1. [Promise & Fetch](./content/15-promise-fetch.md)
+1. [Sets](./content/20-sets.md)
+1. [Maps](./content/21-maps.md)
+1. [Destructuring](./content/22-destructuring.md)
 1. [CSS Selecors](./content/selectors.md)
 ---

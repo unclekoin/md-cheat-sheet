@@ -96,7 +96,7 @@ mainNavigation.prepend(navButton);
 mainNavigation.append(navButton);
 ```
 
-### nsertAdjasentElement
+### insertAdjasentElement
 * `beforebegin`: Before the targetElement itself.
 * `afterbegin`: Just inside the targetElement, before its first child.
 * `beforeend`: Just inside the targetElement, after its last child.
