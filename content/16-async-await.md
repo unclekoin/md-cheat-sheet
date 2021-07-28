@@ -81,15 +81,12 @@ const loadData = async () => {
   try {
     const ids = [1, 15, 33, 45, 103];
     const url = 'https://jsonplaceholder.typicode.com/todos';
-    const requests = ids.map((id) => fetch(`${url}/${id}`));
     
-    const responses = await Promise.all(requests);
-    
-    const dataPromises = responses.map(response => response.json());
-    const finalData = await Promise.all(dataPromises);
+    const responses = await Promise.all(ids.map((id) => fetch(`${url}/${id}`)));
+    const data = await Promise.all(responses.map(response => response.json()));
 
-    console.log(finalData);
-    return finalData
+    console.log(data);
+    return data
 
   } catch (error) {
     console.error(error);
@@ -102,6 +99,22 @@ loadData();
   const data = await loadData();
   console.log(data)
 })();
+```
+```js
+const url = 'https://jsonplaceholder.typicode.com/todos';
+
+const getTodosByIds = async (ids) => {
+  try {
+    const responses = await Promise.all(ids.map((id) => fetch(`${url}/${id}`)));
+    const allTasks = await Promise.all(responses.map((response) => response.json()));
+
+    console.log(allTasks);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+getTodosByIds([43, 21, 55, 100, 10]);
 ```
 ### try, catch, finally
 At least one catch-block, or a finally-block, must be present.

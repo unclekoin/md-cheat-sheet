@@ -253,3 +253,25 @@ Promise.race([p1, p2, p3])
   // error: p3
   // finally
 ```
+### Return `fetch` inside `then`
+```js
+ fetch(USERS_URL, {
+   method: 'GET',
+   headers: {},
+ })
+   .then((response) => response.json())
+   .then((users) => {
+     const firstUserId = users[0].id;
+     return fetch(`${COMMENT_URL}?postId=${firstUserId}`, { 🚀
+       method: 'GET',
+       headers: {},
+     })
+   })
+   .then((response) => response.json())
+   .then((result) => {
+     console.log('result', result);
+   })
+   .catch((error) => {
+     console.log('error', error);
+   });
+   ```
