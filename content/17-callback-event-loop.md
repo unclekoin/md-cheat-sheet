@@ -49,6 +49,7 @@ console.log('finish');
 // finish
 // Hello, William from setTimeout!
 ```
+<img src="../assets/images/event-loop.png">
 
 ### Microtasks & Macrotasks
 Execution of .then/catch/finally handler becomes a microtask
