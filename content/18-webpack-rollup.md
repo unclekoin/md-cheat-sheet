@@ -1,23 +1,30 @@
 [&#8678; get back to the start...](../README.md)
+
 # Webpack / Rollup
-* [webpack getting started](https://webpack.js.org/guides/getting-started/)
-* [rollup.js](https://rollupjs.org/guide/en/)
+
+- [webpack getting started](https://webpack.js.org/guides/getting-started/)
+- [rollup.js](https://rollupjs.org/guide/en/)
 
 ## Node.js® & NPM
-* [node.js](https://nodejs.org/en/)
-* [nvm / node version manager](https://github.com/nvm-sh/nvm)
-* [npm](https://www.npmjs.com/)
+
+- [node.js](https://nodejs.org/en/)
+- [nvm / node version manager](https://github.com/nvm-sh/nvm)
+- [npm](https://www.npmjs.com/)
 
 ## Rollup
-* [rollup](https://rollupjs.org/guide/en/)
+
+- [rollup](https://rollupjs.org/guide/en/)
 
 ```bash
 > npm init -y
 ```
+
 ```bash
 > npm install --global rollup
 ```
+
 Create rollup.config.js
+
 ```js
 // rollup.config.js
 
@@ -29,15 +36,19 @@ export default {
   },
 };
 ```
+
 Let's get started
+
 ```bash
 > rollup -c
 ```
+
 ```html
 <!-- index.html -->
 
 <script src="./build/bundle.js"></script>
 ```
+
 ```bash
 > npm install --save-dev @rollup/plugin-babel
 > npm install --save-dev rollup-plugin-styles
@@ -45,7 +56,9 @@ Let's get started
 > npm install --save-dev rollup-plugin-serve
 > npm install --save-dev rollup-plugin-livereload
 ```
+
 ### Configuration
+
 ```bash
 .
 ├── README.md
@@ -63,33 +76,36 @@ Let's get started
     └── src
         └── index.js
 ```
+
 ```html
 <!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rollup</title>
-</head>
-<body>
-  <h1>Rollup</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rollup</title>
+  </head>
+  <body>
+    <h1>Rollup</h1>
 
-  <script src="./build/bundle.js"></script>
-</body>
+    <script src="./build/bundle.js"></script>
+  </body>
 </html>
 ```
+
 ```js
 // index.js
 import '../index.css';
-import img from '../assets/images/logo.png'
+import img from '../assets/images/logo.png';
 
 const logo = document.createElement('img');
 logo.className = 'logo';
 logo.src = img;
 document.body.prepend(logo);
 ```
+
 ```js
 // rollup.config.js
 
@@ -120,6 +136,7 @@ export default {
   ],
 };
 ```
+
 ```js
 // packege.json
 
@@ -146,20 +163,25 @@ export default {
   }
 }
 ```
+
 Let's get started
+
 ```bash
 > npm run dev
 > npm run prod
 ```
 
 ## Webpack
-* [webpack getting started](https://webpack.js.org/guides/getting-started/)
+
+- [webpack getting started](https://webpack.js.org/guides/getting-started/)
 
 ```bash
 > npm init -y
 > npm install webpack webpack-cli --save-dev
 ```
+
 Create webpack.config.js
+
 ```js
 // webpack.config.js
 
@@ -174,6 +196,7 @@ module.exports = {
   },
 };
 ```
+
 ```js
 // package.json
 
@@ -181,10 +204,13 @@ module.exports = {
     "dev": "webpack"
   },
 ```
+
 Let's get started
+
 ```bash
 > npm run dev
 ```
+
 ```bash
 > npm install --save-dev html-webpack-plugin
 > npm install --save-dev clean-webpack-plugin
@@ -195,8 +221,10 @@ Let's get started
 > npm install --save-dev webpack-dev-server
 > npm install --save-dev source-map-loader
 ```
+
 ### Configuration
-```bash                                           
+
+```bash
 .
 ├── assets
 │   └── images
@@ -211,24 +239,26 @@ Let's get started
 │   └── index.js
 └── webpack.config.js
 
-910 directories, 2888 files                                             
+910 directories, 2888 files
 ```
+
 ```html
 <!-- index.html -->
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Webpack</title>
-</head>
-<body>
-  <h1>Webpack</h1> 
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Webpack</title>
+  </head>
+  <body>
+    <h1>Webpack</h1>
+  </body>
 </html>
 ```
+
 ```js
 // index.js
 
@@ -242,6 +272,7 @@ logo.className = 'logo';
 logo.src = img;
 document.body.prepend(logo);
 ```
+
 ```js
 // webpack.config.js
 
@@ -300,6 +331,7 @@ module.exports = {
   },
 };
 ```
+
 ```js
 // package.json
 
@@ -330,7 +362,29 @@ module.exports = {
   }
 }
 ```
+
 Let's get started
+
 ```bash
 > npm run dev
+```
+
+One more method add image without plugin
+
+```js
+// webpack.config.js
+
+module: {
+    rules: [
+      {
+        test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
+        type: 'asset/images/resource',
+      },
+
+      {
+        test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
+        type: 'asset/inline',
+      },
+    ],
+  },
 ```
