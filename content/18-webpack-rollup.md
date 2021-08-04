@@ -378,7 +378,7 @@ module: {
     rules: [
       {
         test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
-        type: 'asset/images/resource',
+        type: 'asset/resource',
       },
 
       {
